@@ -15,7 +15,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/shardlab/discordrb'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|examples|lib/discordrb/webhooks)/}) }
+  spec.files         = Dir['{lib}/**/**/*.{rb,h,c}']
+  spec.files         += ['LICENSE.md', 'README.md']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.metadata = {
